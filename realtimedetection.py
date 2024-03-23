@@ -7,12 +7,12 @@ os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
 
 emotion_dict = {0: "Angry", 1: "Disgusted", 2: "Fearful", 3: "Happy", 4: "Neutral", 5: "Sad", 6: "Surprised"}
 
-json_file = open('emotion_model2.json', 'r')
+json_file = open('emotion_model.json', 'r')
 loaded_model_json = json_file.read()
 json_file.close()
 
 emotion_model = model_from_json(loaded_model_json)
-emotion_model.load_weights("emotion_model2.h5")
+emotion_model.load_weights("emotion_model.h5")
 
 cap = cv2.VideoCapture(0)
 while True:
